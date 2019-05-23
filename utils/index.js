@@ -23,7 +23,26 @@ function now() {
     return Math.round(Date.now() / 1000)
 }
 
-module.exports = { uuid, randomInt, shuffle, now }
+function sortByCount(items, property) {
+    const keys = {}
+    items.forEach(item => {
+        const value = item[property]
+        if (keys[value] === undefined)
+            keys[value] = { count: 0, value, items: [] }
+        keys[value].count += 1
+        keys[value].items.push(item)
+    })
+
+    const result = []
+    Object.keys(keys)
+        .map(key => keys[key])
+        .sort((a, b) => b.value - a.value)
+        .sort((a, b) => b.count - a.count)
+        .forEach(item => item.items.forEach(item => result.push(item)))
+    return result
+}
+
+module.exports = { uuid, randomInt, shuffle, now, sortByCount }
 
 function uid(length) {
     // if (length === undefined) length = 32
