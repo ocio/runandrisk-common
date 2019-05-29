@@ -3,14 +3,19 @@ const TILE = {
     VILLAGE: 1
 }
 
-const INSTRUCTION = {
-    CONQUEST: 0, // when troops CONQUEST a tile
-    ADD: 1 // add units
-}
-
 const GAME_STATUS = {
     WAITING_PLAYERS: 'WAITING_PLAYERS',
     PLAYING: 'PLAYING'
 }
 
-module.exports = { TILE, INSTRUCTION, GAME_STATUS }
+module.exports = {
+    TILE,
+    GAME_STATUS
+}
+
+// const INSTRUCTION = {
+//     BOARD: 0, // creates the board
+//     CONQUEST: 1, // when troops CONQUEST a tile
+//     ADD: 2, // add or substract units
+//     LEAVE: 3 // when troops LEAVE a tile
+// }

@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ocio/runandrisk-common/issues"
   },
-  "homepage": "https://github.com/ocio/runandrisk-common#readme"
+  "homepage": "https://github.com/ocio/runandrisk-common#readme",
+  "dependencies": {
+    "honeycomb-grid": "^2.0.1"
+  }
 }
