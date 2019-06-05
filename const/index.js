@@ -1,6 +1,18 @@
+const OWNER = {
+    ME: 1,
+    ENEMY: 2
+}
+
 const TILE = {
     COTTAGE: 0,
     VILLAGE: 1
+}
+
+const ELEMENT_TYPE = {
+    VILLAGE: 'VILLAGE',
+    COTTAGE: 'COTTAGE',
+    TROOPS: 'TROOPS',
+    LINE: 'LINE'
 }
 
 const GAME_STATUS = {
@@ -9,7 +21,9 @@ const GAME_STATUS = {
 }
 
 module.exports = {
+    OWNER,
     TILE,
+    ELEMENT_TYPE,
     GAME_STATUS
 }
 
