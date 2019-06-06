@@ -50,10 +50,11 @@ function minOrMax({ number, min, max }) {
 
 function getBestDice({ throws, dice_size = 6 }) {
     const dices = []
-    let dice
+    let dice = 0
     for (let thro = 0; thro < throws; ++thro) {
-        dice = randomInt(1, dice_size)
-        dices.push(dice)
+        const d = randomInt(1, dice_size)
+        dices.push(d)
+        if (dice < d) dice = d
         if (dice === dice_size) break
     }
     return { dice, dices }
