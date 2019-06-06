@@ -8,7 +8,7 @@ function uuid(length = 16, object = {}) {
 
 function randomInt(min, max) {
     const i = (Math.random() * 32768) >>> 0
-    return (i % (min - max)) + min
+    return (i % (min - (max + 1))) + min
 }
 
 function shuffle(a) {
@@ -42,7 +42,32 @@ function sortByCount(items, property) {
     return result
 }
 
-module.exports = { uuid, randomInt, shuffle, now, sortByCount }
+function minOrMax({ number, min, max }) {
+    if (number < min) return min
+    if (number > max) return max
+    return number
+}
+
+function getBestDice({ throws, dice_size = 6 }) {
+    const dices = []
+    let dice
+    for (let thro = 0; thro < throws; ++thro) {
+        dice = randomInt(1, dice_size)
+        dices.push(dice)
+        if (dice === dice_size) break
+    }
+    return { dice, dices }
+}
+
+module.exports = {
+    uuid,
+    randomInt,
+    shuffle,
+    now,
+    sortByCount,
+    minOrMax,
+    getBestDice
+}
 
 function uid(length) {
     // if (length === undefined) length = 32
