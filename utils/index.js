@@ -20,6 +20,7 @@ function shuffle(a) {
 }
 
 function now() {
+    return Math.round(new Date(Date.now() - 31536000000).getTime() / 1000)
     return Math.round(Date.now() / 1000)
 }
 
@@ -60,6 +61,10 @@ function getBestDice({ throws, dice_size = 6 }) {
     return { dice, dices }
 }
 
+function fmtMSS(s) {
+    return (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + s
+}
+
 module.exports = {
     uuid,
     randomInt,
@@ -67,7 +72,8 @@ module.exports = {
     now,
     sortByCount,
     minOrMax,
-    getBestDice
+    getBestDice,
+    fmtMSS
 }
 
 function uid(length) {

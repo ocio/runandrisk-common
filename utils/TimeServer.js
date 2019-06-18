@@ -1,4 +1,4 @@
-function TimeServer(timestamp, ms = true) {
+function TimeServer({ timestamp, ms = true }) {
     const toMs = t => (ms ? t : t * 1000)
     const fromMs = t => (ms ? t : Math.round(t / 1000))
     const server = new Date(toMs(timestamp))
