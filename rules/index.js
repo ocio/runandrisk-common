@@ -12,7 +12,12 @@ function isAllowedToSendUnits({ owner_from, owner_to, player_index }) {
     )
 }
 
+function calcRecruitment({ power, clicks }) {
+    return Math.round((power * clicks) / 100)
+}
+
 module.exports = {
     calcScore,
-    isAllowedToSendUnits
+    isAllowedToSendUnits,
+    calcRecruitment
 }

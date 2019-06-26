@@ -20,7 +20,7 @@ function shuffle(a) {
 }
 
 function now() {
-    return Math.round(new Date(Date.now() - 31536000000).getTime() / 1000)
+    // return Math.round(new Date(Date.now() - 31536000000).getTime() / 1000)
     return Math.round(Date.now() / 1000)
 }
 
