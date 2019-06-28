@@ -20,11 +20,19 @@ const GAME_STATUS = {
     PLAYING: 'PLAYING'
 }
 
+const PLAYER_COLOR = {
+    1: '#009bf4',
+    2: '#f02314',
+    3: '#4db740',
+    4: '#f7b200'
+}
+
 module.exports = {
     OWNER,
     TILE,
     ELEMENT_TYPE,
-    GAME_STATUS
+    GAME_STATUS,
+    PLAYER_COLOR
 }
 
 // const INSTRUCTION = {
